@@ -1,0 +1,74 @@
+[debug] [2024-09-20T09:21:34.183Z] ----------------------------------------------------------------------
+[debug] [2024-09-20T09:21:34.186Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user.OTNI-GMB\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js functions:shell
+[debug] [2024-09-20T09:21:34.186Z] CLI Version:   13.18.0
+[debug] [2024-09-20T09:21:34.186Z] Platform:      win32
+[debug] [2024-09-20T09:21:34.186Z] Node Version:  v20.17.0
+[debug] [2024-09-20T09:21:34.186Z] Time:          Fri Sep 20 2024 02:21:34 GMT-0700 (Pacific Daylight Time)
+[debug] [2024-09-20T09:21:34.186Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-09-20T09:21:34.242Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-20T09:21:34.242Z] > authorizing via signed-in user (princeeazyhardey@gmail.com)
+[debug] [2024-09-20T09:21:34.242Z] [iam] checking project dropbox-clone-84434 for permissions ["firebase.projects.get"]
+[debug] [2024-09-20T09:21:34.243Z] > refreshing access token with scopes: []
+[debug] [2024-09-20T09:21:34.245Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-09-20T09:21:34.245Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-20T09:21:34.795Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-09-20T09:21:34.795Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-20T09:21:34.807Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/dropbox-clone-84434:testIamPermissions [none]
+[debug] [2024-09-20T09:21:34.807Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/dropbox-clone-84434:testIamPermissions x-goog-quota-user=projects/dropbox-clone-84434
+[debug] [2024-09-20T09:21:34.807Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dropbox-clone-84434:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-09-20T09:21:36.117Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/dropbox-clone-84434:testIamPermissions 200
+[debug] [2024-09-20T09:21:36.117Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dropbox-clone-84434:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-09-20T09:21:36.130Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-09-20T09:21:36.133Z] defaultcredentials: writing to file C:\Users\user.OTNI-GMB\AppData\Roaming\firebase\princeeazyhardey_gmail_com_application_default_credentials.json
+[debug] [2024-09-20T09:21:36.134Z] DEBUG: Setting GAC to C:\Users\user.OTNI-GMB\AppData\Roaming\firebase\princeeazyhardey_gmail_com_application_default_credentials.json
+[debug] [2024-09-20T09:21:36.134Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dropbox-clone-84434/adminSdkConfig [none]
+[debug] [2024-09-20T09:21:37.252Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dropbox-clone-84434/adminSdkConfig 200
+[debug] [2024-09-20T09:21:37.253Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dropbox-clone-84434/adminSdkConfig {"projectId":"dropbox-clone-84434","storageBucket":"dropbox-clone-84434.appspot.com"}
+[debug] [2024-09-20T09:21:37.264Z] [functions] Watching "C:\Users\user.OTNI-GMB\Desktop\dropbox-clone\functions" for Cloud Functions...
+[debug] [2024-09-20T09:21:37.268Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2024-09-20T09:21:38.439Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "@google-cloud/storage": "^6.5.0",
+    "firebase-admin": "^11.0.0",
+    "firebase-functions": "^4.0.0",
+    "path": "^0.12.7"
+  },
+  "engines": {
+    "node": "14"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "private": true,
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "eslint": "^8.57.1",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-jsdoc": "^50.2.4",
+    "eslint-plugin-prefer-arrow": "^1.2.3"
+  }
+}
+[debug] [2024-09-20T09:21:38.439Z] Building nodejs source
+[debug] [2024-09-20T09:21:38.439Z] Failed to find version of module node: reached end of search path C:\Users\user.OTNI-GMB\Desktop\dropbox-clone\functions\node_modules
+[warn] !  functions: Your requested "node" version "14" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-09-20T09:21:38.441Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-09-20T09:21:38.445Z] Found firebase-functions binary at 'C:\Users\user.OTNI-GMB\Desktop\dropbox-clone\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8364
+
+[debug] [2024-09-20T09:21:39.040Z] Got response from /__/functions.yaml {"endpoints":{"versionFile":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"google.storage.object.finalize","eventFilters":{"resource":"projects/_/buckets/dropbox-clone-84434.appspot.com"},"retry":false},"labels":{},"entryPoint":"versionFile"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2024-09-20T09:21:44.085Z] [functions] Loaded functions definitions from source: versionFile.
+[debug] [2024-09-20T09:21:44.086Z] addStorageTrigger {"eventTrigger":{"eventType":"google.storage.object.finalize","resource":"projects/_/buckets/dropbox-clone-84434.appspot.com"}}
+[debug] [2024-09-20T09:21:44.086Z] [functions[us-central1-versionFile]] storage function initialized.
+[info] i  functions: Loaded functions: versionFile 
+[warn] !  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub, storage, eventarc, tasks 
