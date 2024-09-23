@@ -1,6 +1,8 @@
+// src/components/FileList.js
+
 import React, { useEffect, useState } from "react";
 import { firestore, storage, auth } from "../firebase";
-import { toast } from "react-toastify"; // Ensure this import exists
+import { toast } from "react-toastify"; // Import toast
 import "./FileList.css";
 
 const FileList = ({ openModal }) => {
@@ -8,7 +10,10 @@ const FileList = ({ openModal }) => {
 
   useEffect(() => {
     const user = auth.currentUser;
-    if (!user) return;
+    if (!user) {
+      console.log("No authenticated user found.");
+      return;
+    }
 
     const unsubscribe = firestore
       .collection("files")
@@ -25,7 +30,7 @@ const FileList = ({ openModal }) => {
         },
         (error) => {
           console.error("Error fetching files:", error);
-          toast.error("Failed to fetch files.");
+          toast.error("Failed to fetch files."); // Use toast
         }
       );
 
@@ -52,10 +57,10 @@ const FileList = ({ openModal }) => {
       await firestore.collection("files").doc(file.id).delete();
       console.log(`Deleted file document from Firestore: ${file.id}`);
 
-      toast.success("File deleted successfully.");
+      toast.success("File deleted successfully."); // Use toast
     } catch (error) {
       console.error("Error deleting file:", error);
-      toast.error("Failed to delete file.");
+      toast.error("Failed to delete file."); // Use toast
     }
   };
 

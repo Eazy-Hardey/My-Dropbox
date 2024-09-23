@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { auth } from "../firebase";
 import "./Authenticator.css";
+import { toast } from "react-toastify";
 
 const Authenticator = () => {
   const [isLogin, setIsLogin] = useState(true); // Toggle between Login and Signup
@@ -15,14 +16,17 @@ const Authenticator = () => {
       if (isLogin) {
         // Login
         await auth.signInWithEmailAndPassword(email, password);
+        toast.success("Logged in successfully!");
       } else {
         // Signup
         await auth.createUserWithEmailAndPassword(email, password);
+        toast.success("Account created successfully!");
       }
       setEmail("");
       setPassword("");
     } catch (error) {
-      alert(error.message);
+      console.error("Authentication Error:", error);
+      toast.error(error.message);
     }
   };
 
@@ -48,7 +52,9 @@ const Authenticator = () => {
         <button type="submit">{isLogin ? "Login" : "Sign Up"}</button>
       </form>
       <p>
-        {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
+        {isLogin
+          ? "Don't have an account?"
+          : "Already have an account?"}{" "}
         <span
           className="toggle-auth"
           onClick={() => setIsLogin(!isLogin)}

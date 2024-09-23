@@ -1,0 +1,49 @@
+/* src/components/ProfilePage.css */
+
+.profile-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .profile-container h2 {
+    text-align: center;
+  }
+  
+  .profile-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-container label {
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  .profile-container input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .profile-container button {
+    padding: 10px 20px;
+    background-color: #007ee5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .profile-container button:disabled {
+    background-color: #94d3a2;
+    cursor: not-allowed;
+  }
+  
+  .profile-container button:hover:enabled {
+    background-color: #005bb5;
+  }
+  

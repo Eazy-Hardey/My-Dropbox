@@ -1,52 +1,78 @@
 /* src/components/FileList.css */
 
 .filelist-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-  }
-  
-  .filelist-container h2 {
-    text-align: center;
-  }
-  
-  .filelist-container ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .filelist-container li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .filelist-container li span {
-    flex: 1;
-    text-align: left;
-  }
-  
-  .filelist-container button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    background-color: #007ee5;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .filelist-container button:hover {
-    background-color: #005bb5;
-  }
-  
-  .filelist-container button:last-child {
-    background-color: #ffc107;
-  }
-  
-  .filelist-container button:last-child:hover {
-    background-color: #e0a800;
-  }
-  
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.filelist-container h2 {
+  text-align: center;
+}
+
+.filelist-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.filelist-container li.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+}
+
+.file-preview {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+
+.file-preview-pdf {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.no-preview {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #555;
+}
+
+.file-actions button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #007ee5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.file-actions button:hover {
+  background-color: #005bb5;
+}
+
+.file-actions button:last-child {
+  background-color: #ffc107;
+}
+
+.file-actions button:last-child:hover {
+  background-color: #e0a800;
+}

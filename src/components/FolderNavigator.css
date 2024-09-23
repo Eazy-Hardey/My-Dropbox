@@ -1,0 +1,19 @@
+/* src/components/FolderNavigator.css */
+
+.folder-navigator {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+  }
+  
+  .folder-navigator a {
+    color: #007ee5;
+    text-decoration: none;
+  }
+  
+  .folder-navigator a:hover {
+    text-decoration: underline;
+  }
+  

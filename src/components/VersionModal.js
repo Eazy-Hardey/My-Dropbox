@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { firestore } from "../firebase";
 import "./VersionModal.css";
-import { toast } from "react-toastify"; // Import toast if needed
+import { toast } from "react-toastify";
 
 const VersionModal = ({ isOpen, onClose, fileId }) => {
   const [versions, setVersions] = useState([]);
@@ -17,7 +17,11 @@ const VersionModal = ({ isOpen, onClose, fileId }) => {
       .onSnapshot((doc) => {
         if (doc.exists) {
           setVersions(doc.data().versions || []);
+          console.log(`Fetched versions for file: ${fileId}`);
         }
+      }, (error) => {
+        console.error("Error fetching versions:", error);
+        toast.error("Failed to fetch file versions.");
       });
 
     return () => unsubscribe();
