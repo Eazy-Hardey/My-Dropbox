@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import ReactDOM  from "react-dom";
 import { ArrowUpTrayIcon } from '@heroicons/react/20/solid';
 import { storage } from '../../firebase';
