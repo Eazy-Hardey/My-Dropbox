@@ -1,38 +1,72 @@
-# create-svelte
+# Welcome to My Instagram
+***
+## Demo
+You can check out the demo of this Dropbox clone [here](https://my-dropbox-app.vercel.app/).
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Task
+Development of a serverless file synchronization application using ReactJS and Firebase that allows users to authenticate, upload files, and manage folders. The application should feature modern file sharing and storage functionalities.
 
-## Creating a project
+## Description
+This Dropbox-like app aims to replicate key features of popular file hosting services like Dropbox. The main features include:
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **User Authentication**: User authentication with Firebase for secure login and signup.
+- **File Uploads**:Users can upload files and organize them into folders.
+- **File Sharing**: Generate links to share files with others.
+- **Folder Management**: Create, delete, and navigate through folders.
+- **Profile Customization**: Edit profiles.
+- **Responsive Design**:User-friendly interface that adapts to various screen sizes.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+You can check out the demo of this Dropbox clone [here](https://my-dropbox-app.vercel.app/).
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Firebase Configuration  
+To connect the application to Firebase, follow these steps:
 
-## Developing
+    - 1. **Create a Firebase project** on [Firebase Console](https://console.firebase.google.com/).
+    - 2. **Add a web app** to the Firebase project and obtain your Firebase configuration object.
+    - 4. Enable Authentication: Go to Firebase Console, navigate to Authentication, and enable Email/Password sign-in.
+    - 4. Set Up Firestore Database: Create necessary collections for users and posts.
+    - 5. Set Up Storage: Use Firebase Storage to upload images and media for posts.
+    - 6. Replace the placeholder in your project with the actual Firebase configuration in `firebase.js`:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+        // firebase.js
+        import firebase from 'firebase/compat/app';
+        import 'firebase/compat/auth';
+        import 'firebase/compat/firestore';
+        import 'firebase/compat/storage';
 
-```bash
-npm run dev
+        const app = firebase.initializeApp({
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_PROJECT_ID.appspot.com",
+        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+        appId: "YOUR_APP_ID",
+        });
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+        const firestore = app.firestore();
+        const storage = app.storage();
+        const auth = app.auth();
 
-## Building
+        export { firestore, auth, storage };
 
-To create a production version of your app:
 
-```bash
-npm run build
-```
+## Installation
 
-You can preview the production build with `npm run preview`.
+  1. Clone the repository:
+        - `cd my_dropbox`  
+  2. Install dependencies:
+        - `npm install`
+  3. Start the development server:
+        - `npm start`
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Usage
+ 1. Login and Signup: Create an account or log in using your credentials.
+ 2. Upload Files: Click the "Upload File" button to add new files.
+ 3. Share Files: Generate shareable links for files to copy to the clipboard.
+ 4. Manage Folders: Create, delete, and navigate through folders to organize your files.
+
+### The Core Team
+
+
+<span><i>Made at <a href='https://qwasar.io'>Qwasar SV -- Software Engineering School</a></i></span>
+<span><img alt='Qwasar SV -- Software Engineering Schools Logo' src='https://storage.googleapis.com/qwasar-public/qwasar-logo_50x50.png' width='20px' /></span>
